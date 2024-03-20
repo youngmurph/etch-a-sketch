@@ -6,12 +6,10 @@ let body = document.querySelector('body');
 let button = document.createElement('button');
 button.textContent = 'Click here to change grid';
 button.className = 'btn';
-let userChoice = button.addEventListener('click', () => {
-    let choice = prompt('How many rows and columns would you like?');
-    return choice;
-});
 
-const randomColor = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+function randomColor(min, max) {
+    return min + Math.floor(Math.random() * (max - min + 1));
+}
 const r = randomColor(0, 255);
 const g = randomColor(0, 255);
 const b = randomColor(0, 255);
@@ -33,6 +31,7 @@ let columns = 16;
         })
         gridRow.addEventListener('mouseout', () => {
             gridRow.style.backgroundColor = '';
+            gridRow.style.transitionDelay = '10s';
         })
         grid.appendChild(gridRow);
         for (let j = 0; j < columns; j++) {
@@ -43,13 +42,17 @@ let columns = 16;
             })
             gridColumn.addEventListener('mouseout', () => {
                 gridColumn.style.backgroundColor = '';
+                gridColumn.style.transitionDelay = '10s';
             })
             grid.appendChild(gridColumn);
         }
     }
 
-
 function userChange() {
+    let element = document.getElementById('grid-row');
+    let element2 = document.getElementById('grid-column');
+    element.remove();
+    element2.remove();
     for (let i = 0; i < userChoice; i++) {
         let userGridRow = document.createElement('div');
         userGridRow.className = 'user-grid-row';
@@ -61,6 +64,9 @@ function userChange() {
         }
     }
 }
+
+
+
 
 
 
