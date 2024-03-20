@@ -32,16 +32,18 @@ for (let i = 0; i < rows; i++) {
 
 function userChange() {
     for (let i = 0; i < userChoice; i++) {
-        let gridRow = document.createElement('div');
-        gridRow.className = 'grid-row';
-        grid.appendChild(gridRow);
+        let userGridRow = document.createElement('div');
+        rows = userChoice;
+        userGridRow.className = 'user-grid-row';
+        grid.appendChild(userGridRow).style.flexBasis = ((100 / userChoice)`%`);
         for (let j = 0; j < userChoice; j++) {
-            let gridColumn = document.createElement('div');
-            gridColumn.className = 'grid-column';
-            grid.appendChild(gridColumn);
+            let userGridColumn = document.createElement('div');
+            columns = userChoice;
+            userGridColumn.className = 'user-grid-column';
+            grid.appendChild(userGridColumn).style.flexBasis = ((100 / userChoice)`%`);
         }
     }
 }
 
-userChange();
+
 
