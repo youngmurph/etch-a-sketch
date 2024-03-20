@@ -1,18 +1,34 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.container {
-    display: flex;
-    border: 1px solid black;
-    width: 600px;
-    height: 600px;
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: wavy;
+    text-shadow: #000000;
+    color: blue;
 }
 
-.grid-square {
-    flex: 1;
-    padding: 10px;
+h1:hover {
+    color: #000000;
+    transition-delay: 100ms;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
     border: 1px solid black;
+    width: 960px;
+    height: 960px;
+}
+
+.grid-row, .grid-column {
+    flex-basis: 6.25%; 
+}
+
+.grid-row:hover, .grid-column:hover {
+    background-color: #353839;
 }
