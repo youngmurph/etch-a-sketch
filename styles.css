@@ -8,12 +8,13 @@ body {
 
 button {
     margin: 10px;
+    margin-bottom: 30px;
     padding: 5px;
 }
 
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    text-decoration: wavy;
+    font-style: italic;
     text-shadow: #000000;
     color: blue;
 }
