@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #e4e4e4;
 }
 
 h1 {
@@ -13,7 +14,7 @@ h1 {
 }
 
 h1:hover {
-    color: #000000;
+    color: #353839;
     transition-delay: 100ms;
 }
 
@@ -23,6 +24,7 @@ h1:hover {
     border: 1px solid black;
     width: 960px;
     height: 960px;
+    background-color: #ffffff;
 }
 
 .grid-row, .grid-column {
