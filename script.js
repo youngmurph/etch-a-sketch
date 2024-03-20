@@ -1,14 +1,16 @@
-let container = document.createElement('div');
+let grid = document.createElement('div');
 let body = document.querySelector('body');
-container.id = 'container';
-body.appendChild(container);
+body.appendChild(grid);
+grid.className = 'container';
 
-for (i = 0; i < 16; i++) {
-    let gameDiv = document.createElement('div');
-    gameDiv.id = 'gamebox';
-    container.appendChild(gameDiv);
+let rows = 16;
+let columns = 16;
 
-    if (i % 4 == 0) {
-        
+for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < columns; j++) {
+        const gridSquare = document.createElement('div');
+        gridSquare.className = 'grid-square';
+        grid.appendChild(gridSquare);
     }
 }
+

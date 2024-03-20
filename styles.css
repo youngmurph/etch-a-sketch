@@ -4,20 +4,15 @@ body {
     align-items: center;
 }
 
-#container {
+.container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 600px;
+    border: 1px solid black;
     width: 600px;
-    max-height: 600px;
-    max-width: 600px;
-    border: 10px black solid;
-    gap: 5px;
+    height: 600px;
 }
 
-#gamebox {
-    border: 1px black solid;
-    width: 40px;
-    height: 40px;
+.grid-square {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid black;
 }
