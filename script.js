@@ -55,7 +55,7 @@ button.addEventListener('click', () => {
     userChoice = prompt('How many squares do you want per side? The maximum is 100.');
     grid.replaceChildren();
     let rows = userChoice;
-    if (userChoice > 1 && userChoice < 100) {
+    if (userChoice > 1 && userChoice < 101) {
         for (let i = 0; i < rows ** 2; i++) {
             let userGridRow = document.createElement('div');
             userGridRow.className = 'user-grid-row';
