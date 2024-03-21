@@ -19,7 +19,6 @@ const rgb = `rgb(${r},${g},${b})`;
 body.appendChild(header);
 body.appendChild(button);
 body.appendChild(grid);
-grid.className = 'container';
 
 let rows = 16;
 let columns = 16;
@@ -58,11 +57,13 @@ let userChoice = '';
 button.addEventListener('click', () => {
     userChoice = prompt('How many squares do you want per side? The maximum is 100.');
     grid.replaceChildren();
+    let rows = userChoice;
+    let columns = userChoice;
    /* while (grid.firstChild) {
         grid.removeChild(grid.lastChild);
     } */
     if (userChoice > 1 && userChoice < 101) {
-        for (let i = 0; i < userChoice; i++) {
+        for (let i = 0; i < rows ** 2; i++) {
             let userGridRow = document.createElement('div');
             userGridRow.className = 'user-grid-row';
             userGridRow.style.flexBasis = (`${(100 / userChoice)}%`);
@@ -75,7 +76,7 @@ button.addEventListener('click', () => {
             })
             grid.appendChild(userGridRow);
         }
-        for (let j = 0; j < userChoice; j++) {
+        for (let j = 0; j < columns; j++) {
             let userGridColumn = document.createElement('div');
             userGridColumn.style.flexBasis = (`${(100 / userChoice)}%`);
             userGridColumn.className = 'user-grid-column';
@@ -90,32 +91,6 @@ button.addEventListener('click', () => {
         }
     }
 })
-
-/* function userChange() {
-    userChoice = prompt('How many rows and columns do you want in your grid? The maximum is 100.');
-    const element = document.getElementById('grid-row');
-    const element2 = document.getElementById('grid-column');
-    element.remove();
-    element2.remove();
-
-    let columns = userChoice;
-    let rows = userChoice;
-
-    for (let i = 0; i < rows; i++) {
-        let userGridRow = document.createElement('div');
-        userGridRow.id = 'user-grid-row';
-        grid.appendChild(userGridRow);
-        userGridRow.style.flexBasis = `${(100 / userChoice)}%`; 
-        for (let j = 0; j < columns; j++) {
-            let userGridColumn = document.createElement('div');
-            userGridColumn.id = 'user-grid-column';
-            grid.appendChild(userGridColumn);
-            userGridColumn.style.flexBasis = `${(100 / userChoice)}%`; 
-        }
-    } 
-} */
-
-
 
 
 
