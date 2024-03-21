@@ -37,7 +37,6 @@ h1:hover {
     flex-basis: 6.25%; 
 }
 
-.grid-row:hover, .grid-column:hover {
-    background-color: #353839;
-}
+
+
 
