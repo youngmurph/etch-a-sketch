@@ -49,20 +49,13 @@ let columns = 16;
         }
     }
 
-
-
-
 let userChoice = '';
 
 button.addEventListener('click', () => {
     userChoice = prompt('How many squares do you want per side? The maximum is 100.');
     grid.replaceChildren();
     let rows = userChoice;
-    let columns = userChoice;
-   /* while (grid.firstChild) {
-        grid.removeChild(grid.lastChild);
-    } */
-    if (userChoice > 1 && userChoice < 101) {
+    if (userChoice > 1 && userChoice < 100) {
         for (let i = 0; i < rows ** 2; i++) {
             let userGridRow = document.createElement('div');
             userGridRow.className = 'user-grid-row';
@@ -75,19 +68,6 @@ button.addEventListener('click', () => {
                 userGridRow.style.transitionDelay = '10s';
             })
             grid.appendChild(userGridRow);
-        }
-        for (let j = 0; j < columns; j++) {
-            let userGridColumn = document.createElement('div');
-            userGridColumn.style.flexBasis = (`${(100 / userChoice)}%`);
-            userGridColumn.className = 'user-grid-column';
-            userGridColumn.addEventListener('mouseover', () => {
-                userGridColumn.style.backgroundColor = rgb;
-            })
-            userGridColumn.addEventListener('mouseout', () => {
-                userGridColumn.style.backgroundColor = '';
-                userGridColumn.style.transitionDelay = '10s';
-            })
-            grid.appendChild(userGridColumn);
         }
     }
 })
